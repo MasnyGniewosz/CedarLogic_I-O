@@ -3863,6 +3863,105 @@
 
 		</shape>
 	</gate>
+	<gate>
+		<name>MF_DISPLAY8</name>
+		<caption>8-bit Multifunction Display</caption>
+#		keyboard input
+		<input>
+			<name>IN_0</name>
+			<point>-5,3.5</point>
+		</input>
+		<input>
+			<name>IN_1</name>
+			<point>-5,2.5</point>
+		</input>
+		<input>
+			<name>IN_2</name>
+			<point>-5,1.5</point>
+		</input>
+		<input>
+			<name>IN_3</name>
+			<point>-5,0.5</point>
+		</input>
+		<input>
+			<name>IN_4</name>
+			<point>-5,-0.5</point>
+		</input>
+		<input>
+			<name>IN_5</name>
+			<point>-5,-1.5</point>
+		</input>
+		<input>
+			<name>IN_6</name>
+			<point>-5,-2.5</point>
+		</input>
+		<input>
+			<name>IN_7</name>
+			<point>-5,-3.5</point>
+		</input>
+#		keyboard output
+		<output>
+			<name>OUT_0</name>
+			<point>5,3.5</point>
+		</output>
+		<output>
+			<name>OUT_1</name>
+			<point>5,2.5</point>
+		</output>
+		<output>
+			<name>OUT_2</name>
+			<point>5,1.5</point>
+		</output>
+		<output>
+			<name>OUT_3</name>
+			<point>5,0.5</point>
+		</output>
+		<output>
+			<name>OUT_4</name>
+			<point>5,-0.5</point>
+		</output>
+		<output>
+			<name>OUT_5</name>
+			<point>5,-1.5</point>
+		</output>
+		<output>
+			<name>OUT_6</name>
+			<point>5,-2.5</point>
+		</output>
+		<output>
+			<name>OUT_7</name>
+			<point>5,-3.5</point>
+		</output>
+		<shape>
+#			Box
+			<line>-4,4.5,-4,-4.5</line>
+			<line>-4,4.5,4,4.5</line>
+			<line>4,4.5,4,-4.5</line>
+			<line>4,-4.5,-4,-4.5</line>
+#			Lines for inputs
+			<line>-4,3.5,-5,3.5</line>
+			<line>-4,2.5,-5,2.5</line>
+			<line>-4,1.5,-5,1.5</line>
+			<line>-4,0.5,-5,0.5</line>
+			<line>-4,-0.5,-5,-0.5</line>
+			<line>-4,-1.5,-5,-1.5</line>
+			<line>-4,-2.5,-5,-2.5</line>
+			<line>-4,-3.5,-5,-3.5</line>
+#			Lines for outputs
+			<line>4,3.5,5,3.5</line>
+			<line>4,2.5,5,2.5</line>
+			<line>4,1.5,5,1.5</line>
+			<line>4,0.5,5,0.5</line>
+			<line>4,-0.5,5,-0.5</line>
+			<line>4,-1.5,5,-1.5</line>
+			<line>4,-2.5,5,-2.5</line>
+			<line>4,-3.5,5,-3.5</line>
+		</shape>
+		<gui_type>MF_DISPLAY8</gui_type>
+		<logic_type>MF_DISPLAY8</logic_type>
+		<logic_param>INPUT_BITS 8</logic_param>
+		<logic_param>OUTPUT_BITS 8</logic_param>
+	</gate>
 </library>
 <library> <name> 8  - Registers</name>
 	<gate> <name>AA_REGISTER4</name>
@@ -10167,105 +10266,6 @@
 #NOTE: Need to make comparator shape!
 #		<caption>8-Bit Magnitude Comparator (TODO)</caption>
 #	</gate>
-	<gate>
-		<name>MF_DISPLAY8</name>
-		<caption>8-bit Multifunction Display</caption>
-#		keyboard input
-		<input>
-			<name>IN_0</name>
-			<point>-5,3.5</point>
-		</input>
-		<input>
-			<name>IN_1</name>
-			<point>-5,2.5</point>
-		</input>
-		<input>
-			<name>IN_2</name>
-			<point>-5,1.5</point>
-		</input>
-		<input>
-			<name>IN_3</name>
-			<point>-5,0.5</point>
-		</input>
-		<input>
-			<name>IN_4</name>
-			<point>-5,-0.5</point>
-		</input>
-		<input>
-			<name>IN_5</name>
-			<point>-5,-1.5</point>
-		</input>
-		<input>
-			<name>IN_6</name>
-			<point>-5,-2.5</point>
-		</input>
-		<input>
-			<name>IN_7</name>
-			<point>-5,-3.5</point>
-		</input>
-#		keyboard output
-		<output>
-			<name>OUT_0</name>
-			<point>5,3.5</point>
-		</output>
-		<output>
-			<name>OUT_1</name>
-			<point>5,2.5</point>
-		</output>
-		<output>
-			<name>OUT_2</name>
-			<point>5,1.5</point>
-		</output>
-		<output>
-			<name>OUT_3</name>
-			<point>5,0.5</point>
-		</output>
-		<output>
-			<name>OUT_4</name>
-			<point>5,-0.5</point>
-		</output>
-		<output>
-			<name>OUT_5</name>
-			<point>5,-1.5</point>
-		</output>
-		<output>
-			<name>OUT_6</name>
-			<point>5,-2.5</point>
-		</output>
-		<output>
-			<name>OUT_7</name>
-			<point>5,-3.5</point>
-		</output>
-		<shape>
-#			Box
-			<line>-4,4.5,-4,-4.5</line>
-			<line>-4,4.5,4,4.5</line>
-			<line>4,4.5,4,-4.5</line>
-			<line>4,-4.5,-4,-4.5</line>
-#			Lines for inputs
-			<line>-4,3.5,-5,3.5</line>
-			<line>-4,2.5,-5,2.5</line>
-			<line>-4,1.5,-5,1.5</line>
-			<line>-4,0.5,-5,0.5</line>
-			<line>-4,-0.5,-5,-0.5</line>
-			<line>-4,-1.5,-5,-1.5</line>
-			<line>-4,-2.5,-5,-2.5</line>
-			<line>-4,-3.5,-5,-3.5</line>
-#			Lines for outputs
-			<line>4,3.5,5,3.5</line>
-			<line>4,2.5,5,2.5</line>
-			<line>4,1.5,5,1.5</line>
-			<line>4,0.5,5,0.5</line>
-			<line>4,-0.5,5,-0.5</line>
-			<line>4,-1.5,5,-1.5</line>
-			<line>4,-2.5,5,-2.5</line>
-			<line>4,-3.5,5,-3.5</line>
-		</shape>
-		<gui_type>MF_DISPLAY8</gui_type>
-		<logic_type>MF_DISPLAY8</logic_type>
-		<logic_param>INPUT_BITS 8</logic_param>
-		<logic_param>OUTPUT_BITS 8</logic_param>
-	</gate>	
 </library>
 <library> <name> 4  - Text</name>
 	<gate> <name>AA_LABEL</name>

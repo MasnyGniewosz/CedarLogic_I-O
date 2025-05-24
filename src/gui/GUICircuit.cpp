@@ -83,6 +83,8 @@ guiGate* GUICircuit::createGate(string gateName, long id, bool noOscope) {
 	else if (ggt == "RAM"){
 		newGate = (guiGate*)(new guiGateRAM());
 	}
+	else if (ggt == "MF_DISPLAY8")
+		newGate = (guiGate*)(new guiGateMFDisplay8());
 	else
 		newGate = new guiGate();
 

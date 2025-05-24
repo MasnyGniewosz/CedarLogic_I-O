@@ -1088,3 +1088,16 @@ long guiGateRAM::getLastRead(){
 //End of edit
 //*************************************************
 
+// *********************** guiGateMFDisplay8 *************************
+
+guiGateMFDisplay8::guiGateMFDisplay8() : guiGate() {
+    
+}
+
+void guiGateMFDisplay8::draw(bool color) {
+    guiGate::draw(color);
+    std::string value = "0";
+}
+
+// ******************** END guiGateMFDisplay8 **********************
+

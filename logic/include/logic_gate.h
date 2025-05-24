@@ -805,7 +805,11 @@ public:
 };
 //End of edit****************************************************
 
-
-
+// ******************* MF Display 8 Gate *********************
+class Gate_MF_DISPLAY8 : public Gate_PASS {
+public:
+    Gate_MF_DISPLAY8();
+    void gateProcess(void) override;
+};
 
 #endif // LOGIC_GATE_H

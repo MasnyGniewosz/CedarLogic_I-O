@@ -455,5 +455,10 @@ private:
 //End of edit
 
 //*************************************************
+class guiGateMFDisplay8 : public guiGate {
+public:
+    guiGateMFDisplay8();
+    void draw(bool color = true) override;
+};
 
 #endif /*GUIGATE_H_*/

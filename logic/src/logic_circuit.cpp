@@ -236,6 +236,8 @@ IDType Circuit::newGate(const string &type, IDType gateID ) {
 			gateList[thisGateID] = GATE_PTR( new Gate_EQUIVALENCE );
 		} else if( type == "Pauseulator" ){
 			gateList[thisGateID] = GATE_PTR( new Gate_pauseulator() );
+		} else if (type == "MF_DISPLAY8") {
+			gateList[thisGateID] = GATE_PTR(new Gate_MF_DISPLAY8());
 		} else {
 			WARNING( "Circuit::newGate() - Invalid logic type!" );
 		}

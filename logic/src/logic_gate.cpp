@@ -2723,7 +2723,24 @@ string Gate_pauseulator::getParameter( string paramName ) {
 //End of edit****************************************************
 
 
+// **************************** MF_DISPLAY8 GATE ***********************************
 
+Gate_MF_DISPLAY8::Gate_MF_DISPLAY8() : Gate_PASS() {
+    declareInputBus("IN", 8);
+    declareOutputBus("OUT", 8);
+}
+
+void Gate_MF_DISPLAY8::gateProcess() {
+    // Przekopiuj wejœcia na wyjœcia (passthrough)
+    for (int i = 0; i < 8; ++i) {
+        std::ostringstream in, out;
+        in << "IN_" << i;
+        out << "OUT_" << i;
+        setOutputState(out.str(), getInputState(in.str()));
+    }
+}
+
+// **************************** END MF_DISPLAY8 GATE ***********************************
 
 
 

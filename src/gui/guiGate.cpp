@@ -1096,7 +1096,31 @@ guiGateMFDisplay8::guiGateMFDisplay8() : guiGate() {
 
 void guiGateMFDisplay8::draw(bool color) {
     guiGate::draw(color);
-    std::string value = "0";
+
+    int value = 0;
+    for (int i = 0; i < 8; ++i) {
+        std::ostringstream in;
+        in << "IN_" << i;
+        // Check if the its plugged in
+        if (connections.find(in.str()) != connections.end() && connections[in.str()] != nullptr) {
+            // Get state from the pin
+            std::vector<StateType> states = connections[in.str()]->getState();
+            if (!states.empty() && states[0] == ONE) {
+				value |= (1 << (7 - i));
+            }
+        }
+    }
+	//sample display text
+    std::ostringstream textStream;
+    textStream << "Input amount of values to add: " << std::uppercase << std::hex << std::setw(2) << std::setfill('0') << value;
+
+    guiText textObj;
+    textObj.setText(textStream.str());
+    textObj.setSize(1.0, 1.0);
+    textObj.setColor(0.0, 0.0, 0.0, 1.0);
+    textObj.setPosition(-3.0, 1.0);
+
+    textObj.draw();
 }
 
 // ******************** END guiGateMFDisplay8 **********************

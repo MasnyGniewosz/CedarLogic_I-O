@@ -1110,9 +1110,39 @@ void guiGateMFDisplay8::draw(bool color) {
             }
         }
     }
-	//sample display text
+
+    int instr = 0;
+    for (int i = 8; i <= 11; ++i) {
+        std::ostringstream in;
+        in << "IN_" << i;
+        if (connections.find(in.str()) != connections.end() && connections[in.str()] != nullptr) {
+            std::vector<StateType> states = connections[in.str()]->getState();
+            if (!states.empty() && states[0] == ONE) {
+				instr |= (1 << (11 - i));
+            }
+        }
+    }
+
     std::ostringstream textStream;
-    textStream << "Input amount of values to add: " << std::uppercase << std::hex << std::setw(2) << std::setfill('0') << value;
+    switch (instr) {
+        case 0x0:  textStream << "(placeholder 0) | Value: " << value; break;
+        case 0x1:  textStream << "(placeholder 1) | Value: " << value; break;
+        case 0x2:  textStream << "(placeholder 2) | Value: " << value; break;
+        case 0x3:  textStream << "(placeholder 3) | Value: " << value; break;
+        case 0x4:  textStream << "(placeholder 4) | Value: " << value; break;
+        case 0x5:  textStream << "(placeholder 5) | Value: " << value; break;
+        case 0x6:  textStream << "(placeholder 6) | Value: " << value; break;
+        case 0x7:  textStream << "(placeholder 7) | Value: " << value; break;
+        case 0x8:  textStream << "(placeholder 8) | Value: " << value; break;
+        case 0x9:  textStream << "(placeholder 9) | Value: " << value; break;
+        case 0xA:  textStream << "(placeholder A) | Value: " << value; break;
+        case 0xB:  textStream << "(placeholder B) | Value: " << value; break;
+        case 0xC:  textStream << "(placeholder C) | Value: " << value; break;
+        case 0xD:  textStream << "(placeholder D) | Value: " << value; break;
+        case 0xE:  textStream << "(placeholder E) | Value: " << value; break;
+        case 0xF:  textStream << "(placeholder F) | Value: " << value; break;
+        default:   textStream << "Unknown instruction"; break;
+    }
 
     guiText textObj;
     textObj.setText(textStream.str());

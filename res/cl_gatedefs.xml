@@ -3899,6 +3899,23 @@
         <name>IN_7</name>
         <point>-5,-3.5</point>
         </input>
+		#		instruction input
+		<input>
+        <name>IN_8</name>
+        <point>-0.5,5.5</point>
+        </input>
+        <input>
+        <name>IN_9</name>
+        <point>1.5,5.5</point>
+        </input>
+        <input>
+        <name>IN_10</name>
+        <point>3.5,5.5</point>
+        </input>
+        <input>
+        <name>IN_11</name>
+        <point>5.5,5.5</point>
+        </input>
         #		keyboard output
         <output>
         <name>OUT_0</name>
@@ -3947,6 +3964,11 @@
         <line>-4,-1.5,-5,-1.5</line>
         <line>-4,-2.5,-5,-2.5</line>
         <line>-4,-3.5,-5,-3.5</line>
+        #			Lines for instruction input
+        <line>-0.5,4.5,-0.5,5.5</line>
+        <line>1.5,4.5,1.5,5.5</line>
+        <line>3.5,4.5,3.5,5.5</line>
+        <line>5.5,4.5,5.5,5.5</line>
         #			Lines for outputs
         <line>24,3.5,25,3.5</line>
         <line>24,2.5,25,2.5</line>
@@ -3959,7 +3981,7 @@
         </shape>
     <gui_type>MF_DISPLAY8</gui_type>
     <logic_type>MF_DISPLAY8</logic_type>
-    <logic_param>INPUT_BITS 8</logic_param>
+    <logic_param>INPUT_BITS 12</logic_param>
     <logic_param>OUTPUT_BITS 8</logic_param>
     </gate>
 </library>

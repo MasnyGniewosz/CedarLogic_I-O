@@ -3916,6 +3916,39 @@
         <name>IN_11</name>
         <point>5.5,5.5</point>
         </input>
+		# external input
+		<input>
+		<name>IN_12</name>
+		<point>-0.5,-5.5</point>
+		</input>
+		<input>
+		<name>IN_13</name>
+		<point>1.5,-5.5</point>
+		</input>
+		<input>
+		<name>IN_14</name>
+		<point>3.5,-5.5</point>
+		</input>
+		<input>
+		<name>IN_15</name>
+		<point>5.5,-5.5</point>
+		</input>
+		<input>
+		<name>IN_16</name>
+		<point>7.5,-5.5</point>
+		</input>
+		<input>
+		<name>IN_17</name>
+		<point>9.5,-5.5</point>
+		</input>
+		<input>
+		<name>IN_18</name>
+		<point>11.5,-5.5</point>
+		</input>
+		<input>
+		<name>IN_19</name>
+		<point>13.5,-5.5</point>
+		</input>
 		#       enter instruction input
 		<input>
             <name>ENTER</name>
@@ -3924,41 +3957,41 @@
         #		keyboard output
         <output>
         <name>OUT_0</name>
-        <point>25,3.5</point>
+        <point>35,3.5</point>
         </output>
         <output>
         <name>OUT_1</name>
-        <point>25,2.5</point>
+        <point>35,2.5</point>
         </output>
         <output>
         <name>OUT_2</name>
-        <point>25,1.5</point>
+        <point>35,1.5</point>
         </output>
         <output>
         <name>OUT_3</name>
-        <point>25,0.5</point>
+        <point>35,0.5</point>
         </output>
         <output>
         <name>OUT_4</name>
-        <point>25,-0.5</point>
+        <point>35,-0.5</point>
         </output>
         <output>
         <name>OUT_5</name>
-        <point>25,-1.5</point>
+        <point>35,-1.5</point>
         </output>
         <output>
         <name>OUT_6</name>
-        <point>25,-2.5</point>
+        <point>35,-2.5</point>
         </output>
         <output>
         <name>OUT_7</name>
-        <point>25,-3.5</point>
+        <point>35,-3.5</point>
         </output>
         <shape>
         #			Box
-        <line>-4,4.5,24,4.5</line>
-        <line>24,4.5,24,-4.5</line>
-        <line>24,-4.5,-4,-4.5</line>
+        <line>-4,4.5,34,4.5</line>
+        <line>34,4.5,34,-4.5</line>
+        <line>34,-4.5,-4,-4.5</line>
         <line>-4,-4.5,-4,4.5</line>
         #			Lines for inputs
         <line>-4,3.5,-5,3.5</line>
@@ -3974,21 +4007,30 @@
         <line>1.5,4.5,1.5,5.5</line>
         <line>3.5,4.5,3.5,5.5</line>
         <line>5.5,4.5,5.5,5.5</line>
+		#			Lines for external input
+		<line>-0.5,-4.5,-0.5,-5.5</line>
+		<line>1.5,-4.5,1.5,-5.5</line>
+		<line>3.5,-4.5,3.5,-5.5</line>
+		<line>5.5,-4.5,5.5,-5.5</line>
+		<line>7.5,-4.5,7.5,-5.5</line>
+		<line>9.5,-4.5,9.5,-5.5</line>
+		<line>11.5,-4.5,11.5,-5.5</line>
+		<line>13.5,-4.5,13.5,-5.5</line>
 		#			Line for enter instruction input
 		<line>12.5,4.5,12.5,5.5</line>
         #			Lines for outputs
-        <line>24,3.5,25,3.5</line>
-        <line>24,2.5,25,2.5</line>
-        <line>24,1.5,25,1.5</line>
-        <line>24,0.5,25,0.5</line>
-        <line>24,-0.5,25,-0.5</line>
-        <line>24,-1.5,25,-1.5</line>
-        <line>24,-2.5,25,-2.5</line>
-        <line>24,-3.5,25,-3.5</line>
+        <line>34,3.5,35,3.5</line>
+        <line>34,2.5,35,2.5</line>
+        <line>34,1.5,35,1.5</line>
+        <line>34,0.5,35,0.5</line>
+        <line>34,-0.5,35,-0.5</line>
+        <line>34,-1.5,35,-1.5</line>
+        <line>34,-2.5,35,-2.5</line>
+        <line>34,-3.5,35,-3.5</line>
         </shape>
     <gui_type>MF_DISPLAY8</gui_type>
     <logic_type>MF_DISPLAY8</logic_type>
-    <logic_param>INPUT_BITS 12</logic_param>
+    <logic_param>INPUT_BITS 20</logic_param>
     <logic_param>OUTPUT_BITS 8</logic_param>
     </gate>
 </library>

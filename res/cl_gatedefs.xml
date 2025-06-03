@@ -3916,6 +3916,11 @@
         <name>IN_11</name>
         <point>5.5,5.5</point>
         </input>
+		#       enter instruction input
+		<input>
+            <name>ENTER</name>
+            <point>12.5,5.5</point>
+        </input>
         #		keyboard output
         <output>
         <name>OUT_0</name>
@@ -3969,6 +3974,8 @@
         <line>1.5,4.5,1.5,5.5</line>
         <line>3.5,4.5,3.5,5.5</line>
         <line>5.5,4.5,5.5,5.5</line>
+		#			Line for enter instruction input
+		<line>12.5,4.5,12.5,5.5</line>
         #			Lines for outputs
         <line>24,3.5,25,3.5</line>
         <line>24,2.5,25,2.5</line>

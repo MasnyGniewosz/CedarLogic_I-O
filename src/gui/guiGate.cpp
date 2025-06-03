@@ -1125,17 +1125,17 @@ void guiGateMFDisplay8::draw(bool color) {
 
     std::ostringstream textStream;
     switch (instr) {
-        case 0x0:  textStream << "(placeholder 0) | Value: " << value; break;
-        case 0x1:  textStream << "(placeholder 1) | Value: " << value; break;
-        case 0x2:  textStream << "(placeholder 2) | Value: " << value; break;
-        case 0x3:  textStream << "(placeholder 3) | Value: " << value; break;
-        case 0x4:  textStream << "(placeholder 4) | Value: " << value; break;
-        case 0x5:  textStream << "(placeholder 5) | Value: " << value; break;
-        case 0x6:  textStream << "(placeholder 6) | Value: " << value; break;
-        case 0x7:  textStream << "(placeholder 7) | Value: " << value; break;
-        case 0x8:  textStream << "(placeholder 8) | Value: " << value; break;
-        case 0x9:  textStream << "(placeholder 9) | Value: " << value; break;
-        case 0xA:  textStream << "(placeholder A) | Value: " << value; break;
+        case 0x0:  textStream << "awaiting instruction code..."; break;
+		case 0x1:  textStream << "enter the 1st number: 0x" << std::hex << std::uppercase << value; break;
+		case 0x2:  textStream << "enter the 2nd number: 0x" << std::hex << std::uppercase << value; break;
+		case 0x3:  textStream << "enter the 3rd number: 0x" << std::hex << std::uppercase << value; break;
+		case 0x4:  textStream << "enter the 4th number: 0x" << std::hex << std::uppercase << value; break;
+		case 0x5:  textStream << "enter the 5th number: 0x" << std::hex << std::uppercase << value; break;
+		case 0x6:  textStream << "enter the 6th number: 0x" << std::hex << std::uppercase << value; break;
+		case 0x7:  textStream << "enter the 7th number: 0x" << std::hex << std::uppercase << value; break;
+		case 0x8:  textStream << "enter the 8th number: 0x" << std::hex << std::uppercase << value; break;
+        case 0x9:  textStream << "enter the 9th number: 0x" << std::hex << std::uppercase << value; break;
+        case 0xA:  textStream << "enter amount of numbers to add (1-9):" << std::uppercase << value; break;
         case 0xB:  textStream << "(placeholder B) | Value: " << value; break;
         case 0xC:  textStream << "(placeholder C) | Value: " << value; break;
         case 0xD:  textStream << "(placeholder D) | Value: " << value; break;

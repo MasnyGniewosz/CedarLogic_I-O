@@ -1112,6 +1112,7 @@ void guiGateMFDisplay8::draw(bool color) {
     }
 
     int instr = 0;
+	
     for (int i = 8; i <= 11; ++i) {
         std::ostringstream in;
         in << "IN_" << i;
@@ -1123,25 +1124,55 @@ void guiGateMFDisplay8::draw(bool color) {
         }
     }
 
+	// enter handling
+    static bool prevEnter = false;
+    static int prevInstr = -1;
+    static bool entered = false;
+    static int enteredInstr = -1;
+
+    bool enter = false;
+    if (connections.find("ENTER") != connections.end() && connections["ENTER"] != nullptr) {
+        std::vector<StateType> states = connections["ENTER"]->getState();
+        if (!states.empty() && states[0] == ONE) {
+            enter = true;
+        }
+    }
+
+    
+    if (enter && !prevEnter) {
+        entered = true;
+        enteredInstr = instr;
+    }
+    prevEnter = enter;
+
+	// reset on instruction change
+    if (entered && instr != enteredInstr) {
+        entered = false;
+    }
+
     std::ostringstream textStream;
-    switch (instr) {
-        case 0x0:  textStream << "awaiting instruction code..."; break;
-		case 0x1:  textStream << "enter the 1st number: 0x" << std::hex << std::uppercase << value; break;
-		case 0x2:  textStream << "enter the 2nd number: 0x" << std::hex << std::uppercase << value; break;
-		case 0x3:  textStream << "enter the 3rd number: 0x" << std::hex << std::uppercase << value; break;
-		case 0x4:  textStream << "enter the 4th number: 0x" << std::hex << std::uppercase << value; break;
-		case 0x5:  textStream << "enter the 5th number: 0x" << std::hex << std::uppercase << value; break;
-		case 0x6:  textStream << "enter the 6th number: 0x" << std::hex << std::uppercase << value; break;
-		case 0x7:  textStream << "enter the 7th number: 0x" << std::hex << std::uppercase << value; break;
-		case 0x8:  textStream << "enter the 8th number: 0x" << std::hex << std::uppercase << value; break;
-        case 0x9:  textStream << "enter the 9th number: 0x" << std::hex << std::uppercase << value; break;
-        case 0xA:  textStream << "enter amount of numbers to add (1-9):" << std::uppercase << value; break;
-        case 0xB:  textStream << "(placeholder B) | Value: " << value; break;
-        case 0xC:  textStream << "(placeholder C) | Value: " << value; break;
-        case 0xD:  textStream << "(placeholder D) | Value: " << value; break;
-        case 0xE:  textStream << "(placeholder E) | Value: " << value; break;
-        case 0xF:  textStream << "(placeholder F) | Value: " << value; break;
-        default:   textStream << "Unknown instruction"; break;
+    if (entered) {
+        textStream << "value entered, awaiting instruction code....";
+    } else {
+        switch (instr) {
+            case 0x0:  textStream << "awaiting instruction code..."; break;
+            case 0x1:  textStream << "enter the 1st number: 0x" << std::hex << std::uppercase << value; break;
+            case 0x2:  textStream << "enter the 2nd number: 0x" << std::hex << std::uppercase << value; break;
+            case 0x3:  textStream << "enter the 3rd number: 0x" << std::hex << std::uppercase << value; break;
+            case 0x4:  textStream << "enter the 4th number: 0x" << std::hex << std::uppercase << value; break;
+            case 0x5:  textStream << "enter the 5th number: 0x" << std::hex << std::uppercase << value; break;
+            case 0x6:  textStream << "enter the 6th number: 0x" << std::hex << std::uppercase << value; break;
+            case 0x7:  textStream << "enter the 7th number: 0x" << std::hex << std::uppercase << value; break;
+            case 0x8:  textStream << "enter the 8th number: 0x" << std::hex << std::uppercase << value; break;
+            case 0x9:  textStream << "enter the 9th number: 0x" << std::hex << std::uppercase << value; break;
+            case 0xA:  textStream << "enter amount of numbers to add (1-9):" << std::uppercase << value; break;
+            case 0xB:  textStream << "(placeholder B) | Value: " << value; break;
+            case 0xC:  textStream << "(placeholder C) | Value: " << value; break;
+            case 0xD:  textStream << "(placeholder D) | Value: " << value; break;
+            case 0xE:  textStream << "(placeholder E) | Value: " << value; break;
+            case 0xF:  textStream << "(placeholder F) | Value: " << value; break;
+            default:   textStream << "Unknown instruction"; break;
+        }
     }
 
     guiText textObj;

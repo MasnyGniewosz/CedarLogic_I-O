@@ -1166,7 +1166,23 @@ void guiGateMFDisplay8::draw(bool color) {
             case 0x8:  textStream << "enter the 8th number: 0x" << std::hex << std::uppercase << value; break;
             case 0x9:  textStream << "enter the 9th number: 0x" << std::hex << std::uppercase << value; break;
             case 0xA:  textStream << "enter amount of numbers to add (1-9):" << std::uppercase << value; break;
-            case 0xB:  textStream << "(placeholder B) | Value: " << value; break;
+            case 0xB: {
+				unsigned int outputValue = 0;
+				for (int i = 0; i < 8; ++i) {
+					std::ostringstream in;
+					in << "IN_" << (12 + i);
+					if (connections.find(in.str()) != connections.end() && connections[in.str()] != nullptr) {
+						std::vector<StateType> states = connections[in.str()]->getState();
+						if (!states.empty() && states[0] == ONE) {
+							outputValue|= (1 << (7 - i));
+						}
+					}
+				}
+				textStream << "Output value is: 0x"
+					<< std::hex << std::uppercase << std::setw(2) << std::setfill('0')
+					<< outputValue;
+				break;
+			}
             case 0xC:  textStream << "(placeholder C) | Value: " << value; break;
             case 0xD:  textStream << "(placeholder D) | Value: " << value; break;
             case 0xE:  textStream << "(placeholder E) | Value: " << value; break;
